@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#201716">
+<meta name="description" content="Guía móvil del viaje a Viena del 12 al 18 de septiembre de 2026.">
+<title>Viena 2026 · guía de bolsillo</title>
+<style>
+:root{
+  --bg:#f6f3ee;--surface:#fffdfa;--surface-2:#eee9e2;--text:#241d1b;--muted:#756c67;
+  --accent:#7d2e2c;--accent-strong:#5d1f20;--gold:#bf922f;--gold-soft:#f4e8bf;
+  --green:#2f785a;--blue:#276b86;--border:#e2d9d0;--shadow:0 10px 28px rgba(52,34,25,.07);
+}
+[data-theme="dark"]{
+  --bg:#1b1716;--surface:#27211f;--surface-2:#342b27;--text:#f7f0e9;--muted:#b6a9a0;
+  --accent:#ed9c8f;--accent-strong:#ffd1c4;--gold:#e4ba56;--gold-soft:#4a3b1e;
+  --green:#75c49c;--blue:#7ec1d8;--border:#493a35;--shadow:0 12px 30px rgba(0,0,0,.22);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;line-height:1.45;padding-bottom:28px}
+button,a{font:inherit}
+a{color:var(--accent);text-underline-offset:3px}
+button{color:inherit}
+.topbar{position:sticky;top:0;z-index:30;background:color-mix(in srgb,var(--bg) 94%,transparent);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);padding:12px 16px;padding-top:max(12px,env(safe-area-inset-top));display:flex;align-items:center;justify-content:space-between;gap:12px}
+.brand{display:flex;align-items:center;gap:10px;min-width:0}
+.brand-mark{display:grid;place-items:center;width:38px;height:38px;border-radius:12px;background:var(--accent);color:#fff;font-size:1.2rem;box-shadow:0 5px 12px rgba(125,46,44,.22)}
+.brand h1{font-size:1rem;line-height:1.1;margin:0;letter-spacing:-.02em}
+.brand small{display:block;color:var(--muted);font-size:.72rem;margin-top:3px}
+.theme{border:1px solid var(--border);background:var(--surface);border-radius:999px;min-width:44px;height:40px;cursor:pointer;font-size:1.05rem}
+.tabs-wrap{position:sticky;top:63px;z-index:20;background:var(--bg);border-bottom:1px solid var(--border)}
+.tabs{display:flex;gap:7px;overflow-x:auto;padding:10px 16px 11px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.tabs::-webkit-scrollbar{display:none}
+.tabs button{flex:0 0 auto;min-height:42px;padding:8px 13px;border:1px solid var(--border);border-radius:999px;background:var(--surface);font-size:.82rem;white-space:nowrap;cursor:pointer;transition:.18s ease}
+.tabs button:active{transform:scale(.97)}
+.tabs button.active{background:var(--accent);border-color:var(--accent);color:#fff;box-shadow:0 5px 12px rgba(125,46,44,.18)}
+main{width:min(100%,780px);margin:0 auto;padding:18px 16px 44px}
+section{display:none;animation:appear .2s ease}
+section.active{display:block}
+@keyframes appear{from{opacity:0;transform:translateY(3px)}to{opacity:1;transform:none}}
+.hero{padding:8px 2px 18px}
+.eyebrow{color:var(--accent);font-size:.75rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;margin:0 0 6px}
+.hero h2{font-family:Georgia,serif;font-size:clamp(2rem,8vw,3.4rem);line-height:1.02;letter-spacing:-.045em;margin:0 0 12px;max-width:680px}
+.hero p{font-size:1rem;color:var(--muted);margin:0;max-width:620px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:7px;min-height:44px;padding:10px 14px;border:1px solid var(--border);border-radius:12px;background:var(--surface);color:var(--text);text-decoration:none;font-size:.84rem;font-weight:750;cursor:pointer}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+.btn.ghost{background:transparent}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:18px;padding:17px;margin:0 0 14px;box-shadow:var(--shadow)}
+.card h2{display:flex;align-items:flex-start;gap:8px;font-size:1.03rem;line-height:1.2;margin:0 0 11px;letter-spacing:-.01em}
+.card h3{font-size:.92rem;margin:17px 0 7px;color:var(--accent)}
+.card p{margin:8px 0;font-size:.91rem}
+.muted{color:var(--muted);font-size:.83rem}
+.kicker{font-size:.73rem;color:var(--muted);font-weight:800;letter-spacing:.07em;text-transform:uppercase;margin:0 0 6px}
+.lead{font-size:1rem!important}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.grid.three{grid-template-columns:repeat(3,minmax(0,1fr))}
+.mini{background:var(--surface-2);border-radius:14px;padding:12px;min-height:88px}
+.mini strong{display:block;font-size:.9rem;line-height:1.15}
+.mini span{display:block;color:var(--muted);font-size:.78rem;margin-top:5px}
+.quick-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+.quick-grid button{min-height:66px;text-align:left;border:1px solid var(--border);border-radius:14px;background:var(--surface);padding:11px 12px;cursor:pointer}
+.quick-grid button strong{display:block;font-size:.88rem}
+.quick-grid button span{display:block;color:var(--muted);font-size:.75rem;margin-top:3px}
+.quick-grid button:active{background:var(--surface-2)}
+.notice{border-left:4px solid var(--gold);background:var(--gold-soft);border-radius:13px;padding:12px 13px;margin:11px 0;font-size:.87rem}
+.notice strong{display:block;margin-bottom:3px}
+.notice.danger{border-left-color:var(--accent);background:color-mix(in srgb,var(--accent) 10%,var(--surface))}
+.notice.ok{border-left-color:var(--green);background:color-mix(in srgb,var(--green) 10%,var(--surface))}
+.row{display:flex;justify-content:space-between;gap:14px;padding:8px 0;border-bottom:1px dashed var(--border);font-size:.88rem}
+.row:last-child{border-bottom:0}
+.row .key{color:var(--muted)}
+.row .value{text-align:right;font-weight:750}
+.badge{display:inline-flex;align-items:center;vertical-align:middle;border-radius:999px;padding:3px 8px;background:var(--gold-soft);color:var(--text);font-size:.7rem;font-weight:800;white-space:nowrap}
+.badge.work{background:#d9e8f2;color:#22556b}
+.badge.good{background:#d6ecdf;color:#205d43}
+.badge.warn{background:#f5ddda;color:#792b2b}
+[data-theme="dark"] .badge.work{background:#254452;color:#bce8f5}
+[data-theme="dark"] .badge.good{background:#204735;color:#a2e2bd}
+[data-theme="dark"] .badge.warn{background:#522827;color:#ffc3ba}
+.day-head{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin:4px 0 17px}
+.day-head h2{font-family:Georgia,serif;font-size:1.9rem;line-height:1.05;letter-spacing:-.03em;margin:0}
+.day-head p{color:var(--muted);font-size:.83rem;margin:5px 0 0}
+.day-number{display:grid;place-items:center;flex:0 0 58px;height:58px;border-radius:18px;background:var(--accent);color:#fff;font-size:1.15rem;font-weight:850}
+.day-number small{font-size:.62rem;display:block;line-height:1}
+.slot{position:relative;margin:0 0 10px;padding:13px 13px 12px 17px;background:var(--surface);border:1px solid var(--border);border-radius:15px;box-shadow:0 5px 16px rgba(52,34,25,.045)}
+.slot:before{content:"";position:absolute;left:0;top:13px;bottom:13px;width:3px;border-radius:4px;background:var(--gold)}
+.slot .time{font-size:.73rem;color:var(--accent);font-weight:850;letter-spacing:.08em;text-transform:uppercase}
+.slot h3{font-size:.96rem;margin:4px 0 5px}
+.slot p{font-size:.88rem;margin:0;color:var(--text)}
+.slot .transport{font-size:.8rem;color:var(--muted);margin-top:9px;padding-top:8px;border-top:1px dashed var(--border)}
+.slot .transport b{color:var(--text)}
+.maplink{display:inline-flex;align-items:center;gap:5px;min-height:36px;margin-top:10px;padding:7px 10px;background:color-mix(in srgb,var(--accent) 9%,var(--surface));border-radius:10px;text-decoration:none;font-size:.77rem;font-weight:800}
+.maplink.coords{background:color-mix(in srgb,var(--blue) 10%,var(--surface));color:var(--blue)}
+.split{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+.split > div:first-child{min-width:0}
+.place-title{margin:0;font-size:.95rem}
+.place-meta{color:var(--muted);font-size:.79rem;margin:4px 0 0}
+.place-body{font-size:.84rem;margin:10px 0 0}
+.priority{font-size:.68rem;font-weight:850;letter-spacing:.07em;text-transform:uppercase;color:var(--accent)}
+.checklist{list-style:none;padding:0;margin:8px 0 0}
+.checklist li{position:relative;padding:8px 0 8px 24px;border-bottom:1px dashed var(--border);font-size:.87rem}
+.checklist li:last-child{border-bottom:0}
+.checklist li:before{content:"✓";position:absolute;left:0;top:8px;color:var(--green);font-weight:900}
+.source-note{font-size:.74rem;color:var(--muted);margin-top:16px}
+.source-note a{color:inherit}
+.footer{text-align:center;color:var(--muted);font-size:.75rem;padding:12px 0 0}
+@media (min-width:600px){
+  .topbar{padding-left:24px;padding-right:24px}.tabs{padding-left:24px;padding-right:24px}main{padding-left:24px;padding-right:24px}
+  .quick-grid{grid-template-columns:repeat(4,minmax(0,1fr))}.grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+@media (max-width:380px){.tabs button{padding-left:11px;padding-right:11px}.card{padding:14px}.grid.three{grid-template-columns:1fr}.hero h2{font-size:2rem}}
+</style>
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">
+    <div class="brand-mark" aria-hidden="true">🇦🇹</div>
+    <div><h1>Viena 2026</h1><small>12–18 septiembre · guía móvil</small></div>
+  </div>
+  <button class="theme" id="themeToggle" aria-label="Cambiar tema">🌙</button>
+</header>
+
+<div class="tabs-wrap">
+  <nav class="tabs" aria-label="Navegación rápida">
+    <button data-tab="inicio" class="active">🏠 Inicio</button>
+    <button data-tab="dia-12">Sáb 12</button>
+    <button data-tab="dia-13">Dom 13</button>
+    <button data-tab="dia-14">Lun 14</button>
+    <button data-tab="dia-15">Mar 15</button>
+    <button data-tab="dia-16">Mié 16</button>
+    <button data-tab="dia-17">Jue 17</button>
+    <button data-tab="dia-18">Vie 18</button>
+    <button data-tab="extras">✨ Extras</button>
+    <button data-tab="pianos">🎹 Pianos</button>
+    <button data-tab="logistica">🧳 Logística</button>
+  </nav>
+</div>
+
+<main>
+  <section id="inicio" class="active">
+    <div class="hero">
+      <p class="eyebrow">Tu semana, en una pantalla</p>
+      <h2>Viena para caminar, escuchar y llegar a tiempo.</h2>
+      <p>Plan pensado para usarlo con una mano: toca un día arriba, abre el mapa del siguiente sitio y sigue la ruta.</p>
+      <div class="hero-actions">
+        <button class="btn primary" data-go="dia-13">▶ Empezar por el domingo</button>
+        <button class="btn" data-go="extras">Ver qué falta</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <p class="kicker">Resumen del viaje</p>
+      <div class="grid">
+        <div class="mini"><strong>6 noches</strong><span>12–18 sep 2026</span></div>
+        <div class="mini"><strong>Carlos · solo</strong><span>base en Margareten</span></div>
+        <div class="mini"><strong>Mañanas de trabajo</strong><span>lunes a jueves</span></div>
+      </div>
+      <p class="muted" style="margin-top:12px">Llegada el sábado por la noche y vuelo de vuelta el viernes a las 15:40. Los planes culturales están colocados sobre todo después del trabajo.</p>
+      <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Sch%C3%B6nbrunner%20Stra%C3%9Fe%20127%2C%201050%20Wien" target="_blank" rel="noopener">📍 Abrir tu alojamiento</a>
+    </div>
+
+    <div class="card">
+      <h2>⚡ Acceso rápido por día</h2>
+      <div class="quick-grid">
+        <button data-go="dia-12"><strong>Sáb 12 · Llegada</strong><span>VIE → alojamiento</span></button>
+        <button data-go="dia-13"><strong>Dom 13 · Schönbrunn</strong><span>primer día completo</span></button>
+        <button data-go="dia-14"><strong>Lun 14 · Musikverein</strong><span>Frankl + concierto</span></button>
+        <button data-go="dia-15"><strong>Mar 15 · Estreno</strong><span>Haus der Musik + ópera</span></button>
+        <button data-go="dia-16"><strong>Mié 16 · Centro</strong><span>Stephansdom + Hofburg</span></button>
+        <button data-go="dia-17"><strong>Jue 17 · Compositores</strong><span>Zentralfriedhof</span></button>
+        <button data-go="dia-18"><strong>Vie 18 · Salida</strong><span>Schubert + aeropuerto</span></button>
+        <button data-go="pianos"><strong>🎹 Piano</strong><span>ubicaciones y coordenadas</span></button>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>🚦 Dos avisos que sí importan</h2>
+      <div class="notice danger"><strong>Obras ferroviarias desde el 7 de septiembre</strong>La Stammstrecke entre Wien Hauptbahnhof/St. Marx y Praterstern estará cerrada. Para tus fechas, revisa el servicio oficial del aeropuerto: el CAT figura como servicio “CAT by bus” en el plan de obras. En la pestaña Logística dejo la ruta de llegada y el enlace oficial para comprobar cambios el mismo día.</div>
+      <div class="notice"><strong>El lunes es tu hueco más delicado</strong>El Museo Viktor Frankl abre solo algunos días; está colocado el lunes a las 13:00. Si necesitas trabajar más, conviértelo en visita corta y deja el resto de la tarde para descansar antes del concierto.</div>
+    </div>
+
+    <div class="card">
+      <h2>✅ Ya está cubierto</h2>
+      <ul class="checklist">
+        <li>Schönbrunn, jardines y Gloriette.</li>
+        <li>Museo Viktor Frankl y Haus der Musik.</li>
+        <li>Musikverein el lunes 14 a las 20:15.</li>
+        <li>Estreno en el Schlosstheater de Schönbrunn el martes 15 a las 19:00.</li>
+        <li>Centro histórico y ruta de compositores en Zentralfriedhof.</li>
+      </ul>
+    </div>
+    <p class="source-note">Contenido revisado el 15/08/2026 con fuentes oficiales de Viena, Wiener Linien, Flughafen Wien y Open Piano. Los horarios y la disponibilidad de pianos pueden cambiar.</p>
+  </section>
+
+  <section id="dia-12">
+    <div class="day-head"><div><p class="eyebrow">Día 1 · llegada</p><h2>Sábado 12 septiembre</h2><p>Vuelo 19:55 → llegada 22:55 · noche de aterrizaje</p></div><div class="day-number">12<small>SEP</small></div></div>
+    <div class="notice"><strong>Plan mínimo y sin improvisar</strong>Al llegar de noche, prioriza llegar al alojamiento y dormir. Lleva la dirección guardada y el teléfono del check-in a mano.</div>
+    <div class="slot"><div class="time">22:55 · Llegada</div><h3>✈️ Aeropuerto de Viena (VIE)</h3><p>Recoge el equipaje y sigue la señalización del servicio que esté operativo ese día. La conexión CAT hacia Wien Mitte tiene una ventana nocturna limitada; si vas justo, taxi/Bolt directo al alojamiento es el plan B más cómodo.</p><a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Vienna%20International%20Airport" target="_blank" rel="noopener">📍 VIE en Google Maps</a></div>
+    <div class="slot"><div class="time">Noche</div><h3>🏠 Check-in en Silver Homes 1050</h3><p>Schönbrunner Straße 127, 1050 Wien. Check-in 24/7 mediante caja de seguridad. Llama al <a href="tel:+436603027680">+43 660 3027680</a> si aparece cualquier problema con las llaves.</p><a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Sch%C3%B6nbrunner%20Stra%C3%9Fe%20127%2C%201050%20Wien" target="_blank" rel="noopener">📍 Alojamiento</a></div>
+    <div class="card"><h2>🧭 Ruta recomendada</h2><p class="lead">Aeropuerto → servicio ferroviario/bus de obras hacia <b>Wien Mitte</b> → U4 dirección Hütteldorf → <b>Pilgramgasse</b> → 10 min a pie. Si llegas cansado o pierdes la última conexión, taxi/Bolt directo.</p><a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Wien%20Mitte%20Landstra%C3%9Fe" target="_blank" rel="noopener">📍 Wien Mitte</a><a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Pilgramgasse%20Wien" target="_blank" rel="noopener">📍 Pilgramgasse</a></div>
+  </section>
+
+  <section id="dia-13">
+    <div class="day-head"><div><p class="eyebrow">Día 2 · libre</p><h2>Domingo 13 septiembre</h2><p>Mercado/paseo · Schönbrunn · cena tranquila</p></div><div class="day-number">13<small>SEP</small></div></div>
+    <div class="slot"><div class="time">Mañana</div><h3>☕ Naschmarkt sin prisas</h3><p>Está a unos 10 min andando. El mercado principal no funciona como un día laborable de compras, así que úsalo para pasear y desayunar donde esté abierto; no lo conviertas en una visita con horario rígido.</p><a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Naschmarkt%20Wien" target="_blank" rel="noopener">📍 Naschmarkt</a></div>
+    <div class="slot"><div class="time">Mediodía · tarde</div><h3>🏛️ Schönbrunn + jardines + Gloriette</h3><p>Reserva una franja para el interior del palacio y deja 3–4 horas para jardines y subida a la Gloriette. Si el tiempo aprieta, prioriza jardines y exterior: son lo más flexible del día.</p><div class="transport">🚋 Tranvía 62 desde tu zona hasta Schönbrunn · comprueba la ruta en WienMobil antes de salir.</div><a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Sch%C3%B6nbrunn%20Palace%20Vienna" target="_blank" rel="noopener">📍 Palacio</a><a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Gloriette%20Sch%C3%B6nbrunn" target="_blank" rel="noopener">📍 Gloriette</a></div>
+    <div class="slot"><div class="time">Noche</div><h3>🍽️ Beisl cerca de Margareten</h3><p>Cena sencilla y descanso: mañana empieza el trabajo. Si quieres una alternativa centrada, guarda la opción de un Kaffeehaus para otro día.</p><a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Margaretenplatz%20Wien" target="_blank" rel="noopener">📍 Margaretenplatz</a></div>
+  </section>
+
+  <section id="dia-14">
+    <div class="day-head"><div><p class="eyebrow">Día 3 · trabajo + concierto</p><h2>Lunes 14 septiembre</h2><p>Museo Viktor Frankl · Musikverein 20:15</p></div><div class="day-number">14<small>SEP</small></div></div>
+    <div class="slot"><div class="time">Mañana</div><h3>💻 Trabajo remoto</h3><p>Trabaja desde el alojamiento y deja preparada la salida de las 12:30–12:40.</p><a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Sch%C3%B6nbrunner%20Stra%C3%9Fe%20127%2C%201050%20Wien" target="_blank" rel="noopener">📍 Volver al alojamiento</a></div>
+    <div class="slot"><div class="time">13:00–14:30</div><h3>🧠 Museo Viktor Frankl</h3><p>Mariannengasse 1/15, 1090 Wien. Es el hueco que más conviene proteger porque la apertura es limitada. Si el trabajo no permite 90 minutos, haz una visita más corta y no intentes compensarla corriendo por la tarde.</p><a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Viktor%20Frankl%20Museum%20Vienna" target="_blank" rel="noopener">📍 Museo Viktor Frankl</a></div>
+    <div class="slot"><div class="time">18:45 · salida</div><h3>🎼 Musikverein · concierto 20:15</h3><p>Fila 18, asiento 11. Sal con margen: tranvía 62 hacia Karlsplatz y 5 min a pie. Puertas previstas una hora antes.</p><a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Musikverein%20Wien" target="_blank" rel="noopener">📍 Musikverein</a></div>
+    <div class="notice ok"><strong>Ritmo del día</strong>No intentes añadir otro museo: Frankl + concierto ya forman un lunes redondo.</div>
+  </section>
+
+  <section id="dia-15">
+    <div class="day-head"><div><p class="eyebrow">Día 4 · trabajo + estreno</p><h2>Martes 15 septiembre</h2><p>Haus der Musik · “La bella Selvaggia” 19:00</p></div><div class="day-number">15<small>SEP</small></div></div>
+    <div class="slot"><div class="time">Mañana</div><h3>💻 Trabajo remoto</h3><p>Trabajo desde el alojamiento.</p></div>
+    <div class="slot"><div class="time">Tarde</div><h3>🎧 Haus der Musik</h3><p>Seilerstätte 30, 1010 Wien. Museo interactivo de música; calcula 1,5–2 h. Sal con margen para no llegar acelerado al estreno.</p><a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Haus%20der%20Musik%20Vienna" target="_blank" rel="noopener">📍 Haus der Musik</a></div>
+    <div class="slot"><div class="time">18:15 · salida a Schönbrunn</div><h3>🚋 Llegar con calma</h3><p>Tranvía 62 hasta Schönbrunn y unos minutos andando hasta el teatro. Para un estreno, lleva la entrada descargada y no apures el transbordo.</p><a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Schlosstheater%20Sch%C3%B6nbrunn" target="_blank" rel="noopener">📍 Schlosstheater</a></div>
+    <div class="slot"><div class="time">19:00</div><h3>🎭 “La bella Selvaggia” · Salieri</h3><p>Estreno en el Schlosstheater de Schönbrunn, producción de la mdw. Pedido oeticket: 1536452752. ¡Este es el evento central de la semana!</p><a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Schloss%20Sch%C3%B6nbrunn%20Haupteingang%20Wien" target="_blank" rel="noopener">📍 Entrada del palacio</a></div>
+  </section>
+
+  <section id="dia-16">
+    <div class="day-head"><div><p class="eyebrow">Día 5 · trabajo + centro</p><h2>Miércoles 16 septiembre</h2><p>Casco histórico · opción de Hofburg o Belvedere</p></div><div class="day-number">16<small>SEP</small></div></div>
+    <div class="slot"><div class="time">Mañana</div><h3>💻 Trabajo remoto</h3><p>Trabajo desde el alojamiento.</p></div>
+    <div class="slot"><div class="time">Tarde</div><h3>⛪ Stephansdom + Graben + Kärntner Straße</h3><p>Haz el centro caminando. Si todavía no has entrado a la catedral, priorízala sobre acumular más fachadas. Desde aquí puedes decidir entre Hofburg o uno de los museos de Extras.</p><a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Stephansdom%20Vienna" target="_blank" rel="noopener">📍 Stephansdom</a><a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Graben%20Vienna" target="_blank" rel="noopener">📍 Graben</a></div>
+    <div class="slot"><div class="time">Plan B cultural</div><h3>👑 Hofburg o 🖼️ Belvedere</h3><p>Hofburg encaja mejor con el centro; Belvedere gana si quieres ver Klimt. No intentes hacer ambos el mismo día después del trabajo.</p><a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Hofburg%20Vienna" target="_blank" rel="noopener">📍 Hofburg</a><a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Belvedere%20Museum%20Vienna" target="_blank" rel="noopener">📍 Belvedere</a></div>
+    <div class="slot"><div class="time">Noche</div><h3>🍷 Heuriger o cena en el centro</h3><p>Si quieres una experiencia muy vienesa, consulta la pestaña Extras y elige solo un heuriger: el desplazamiento es parte del plan.</p><a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Grinzing%20Vienna" target="_blank" rel="noopener">📍 Grinzing</a></div>
+  </section>
+
+  <section id="dia-17">
+    <div class="day-head"><div><p class="eyebrow">Día 6 · trabajo + compositores</p><h2>Jueves 17 septiembre</h2><p>Zentralfriedhof · Beethoven · Schubert · Brahms</p></div><div class="day-number">17<small>SEP</small></div></div>
+    <div class="slot"><div class="time">Mañana</div><h3>💻 Trabajo remoto</h3><p>Trabajo desde el alojamiento.</p></div>
+    <div class="slot"><div class="time">Tarde</div><h3>🪦 Zentralfriedhof · Puerta 2</h3><p>Busca la zona de Ehrengräber: Beethoven, Schubert y Brahms están juntos; Mozart tiene un monumento conmemorativo. Es la salida más coherente con el hilo musical del viaje.</p><div class="transport">🚋 Tranvía 71 desde Schwarzenbergplatz hasta “Zentralfriedhof 2. Tor”. Comprueba incidencias porque la obra ferroviaria cambia algunos enlaces.</div><a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Zentralfriedhof%202.%20Tor%20Wien" target="_blank" rel="noopener">📍 Puerta 2</a><a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Ehrengr%C3%A4ber%20Zentralfriedhof%20Wien" target="_blank" rel="noopener">📍 Ehrengräber</a></div>
+    <div class="slot"><div class="time">Vuelta</div><h3>⛪ Karlskirche + última cena</h3><p>Si vuelves con luz y ganas, la Karlskirche es una parada breve y muy buena antes de despedirte de Viena.</p><a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Karlskirche%20Vienna" target="_blank" rel="noopener">📍 Karlskirche</a></div>
+  </section>
+
+  <section id="dia-18">
+    <div class="day-head"><div><p class="eyebrow">Día 7 · salida</p><h2>Viernes 18 septiembre</h2><p>Checkout · Schubert Sterbehaus · vuelo 15:40</p></div><div class="day-number">18<small>SEP</small></div></div>
+    <div class="slot"><div class="time">09:00–11:00</div><h3>🧳 Checkout</h3><p>Deja el alojamiento dentro de la ventana pactada. Si el equipaje queda guardado, valora una última parada corta; si no, sal directamente.</p><a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Sch%C3%B6nbrunner%20Stra%C3%9Fe%20127%2C%201050%20Wien" target="_blank" rel="noopener">📍 Alojamiento</a></div>
+    <div class="slot"><div class="time">Mañana opcional</div><h3>🎹 Schubert Sterbehaus</h3><p>Kettenbrückengasse 6. Está cerca de tu base y puede funcionar como visita rápida si el horario de salida está controlado. No la conviertas en una carrera con la maleta.</p><a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Schubert%20Sterbehaus%20Kettenbr%C3%BCckengasse%206%20Wien" target="_blank" rel="noopener">📍 Schubert Sterbehaus</a></div>
+    <div class="slot"><div class="time">12:15–12:30 · salida</div><h3>✈️ Wien Mitte → VIE</h3><p>Ve hacia Wien Mitte y utiliza el servicio aeroportuario oficial vigente ese día. Para un vuelo a las 15:40, el objetivo razonable es estar en el aeropuerto sobre las 13:15–13:30.</p><a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Wien%20Mitte%20Landstra%C3%9Fe" target="_blank" rel="noopener">📍 Wien Mitte</a><a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Vienna%20International%20Airport%20Terminal%201" target="_blank" rel="noopener">📍 Aeropuerto VIE</a></div>
+  </section>
+
+  <section id="extras">
+    <div class="hero"><p class="eyebrow">Lo que queda en el tintero</p><h2>Extras que sí merecen un hueco.</h2><p>Tu itinerario ya cubre los imprescindibles musicales. Estas son las ausencias más claras, ordenadas por cuánto aportan y por lo fácil que es encajarlas.</p></div>
+    <div class="card"><h2>🎯 Mi priorización</h2><div class="grid three"><div class="mini"><strong>1 · KHM + MuseumsQuartier</strong><span>la gran ausencia de arte e historia</span></div><div class="mini"><strong>2 · Belvedere</strong><span>si quieres Klimt sin discusión</span></div><div class="mini"><strong>3 · Hofburg</strong><span>si prefieres Viena imperial</span></div></div><p class="muted" style="margin-top:12px">Para tus tardes de trabajo escogería solo una de las tres. El miércoles 16 es el mejor hueco; no sacrificaría el Zentralfriedhof ni el concierto por añadir otra visita.</p></div>
+
+    <div class="card"><div class="split"><div><span class="priority">Prioridad alta</span><h2 class="place-title">🖼️ Kunsthistorisches Museum + Maria-Theresien-Platz</h2><p class="place-meta">Maria-Theresien-Platz, 1010 Wien</p></div><span class="badge">2–3 h</span></div><p class="place-body">La gran pieza que falta si te interesa pintura, arte europeo y el mundo de los Habsburgo. Combínalo con MuseumsQuartier o el centro; mejor que meter otro museo el lunes.</p><a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Kunsthistorisches%20Museum%20Vienna" target="_blank" rel="noopener">📍 KHM</a><a class="maplink" href="https://www.google.com/maps/search/?api=1&query=MuseumsQuartier%20Vienna" target="_blank" rel="noopener">📍 MuseumsQuartier</a></div>
+
+    <div class="card"><div class="split"><div><span class="priority">Prioridad alta</span><h2 class="place-title">✨ Belvedere Superior</h2><p class="place-meta">Prinz-Eugen-Straße 27, 1030 Wien</p></div><span class="badge">1,5–2 h</span></div><p class="place-body">El mejor extra si quieres una sola obra-objetivo: <i>El beso</i> de Klimt, más palacio barroco y jardines. Reserva franja si te decides.</p><a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Upper%20Belvedere%20Vienna" target="_blank" rel="noopener">📍 Belvedere Superior</a></div>
+
+    <div class="card"><div class="split"><div><span class="priority">Prioridad media</span><h2 class="place-title">👑 Hofburg + Tesoro Imperial + Biblioteca Nacional</h2><p class="place-meta">Heldenplatz / Josefsplatz, 1010 Wien</p></div><span class="badge">2–3 h</span></div><p class="place-body">Mejor elección si quieres entender la Viena imperial sin salir del centro. Puedes hacerlo el miércoles 16 después de Stephansdom, seleccionando solo una visita interior.</p><a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Hofburg%20Vienna" target="_blank" rel="noopener">📍 Hofburg</a><a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Austrian%20National%20Library%20State%20Hall%20Vienna" target="_blank" rel="noopener">📍 Biblioteca Nacional</a></div>
+
+    <div class="card"><div class="split"><div><span class="priority">Prioridad media</span><h2 class="place-title">🎡 Prater + Noria Gigante</h2><p class="place-meta">Riesenradplatz 1, 1020 Wien</p></div><span class="badge">1,5–2 h</span></div><p class="place-body">La ausencia más clara si quieres una Viena menos monumental. Buen plan de tarde-noche, con paseo y vistas; encaja mejor que un museo si estás cansado.</p><a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Wiener%20Riesenrad%20Prater" target="_blank" rel="noopener">📍 Noria del Prater</a></div>
+
+    <div class="card"><div class="split"><div><span class="priority">Prioridad media</span><h2 class="place-title">🏠 Hundertwasserhaus + Kunst Haus Wien</h2><p class="place-meta">Kegelgasse 34–38, 1030 Wien</p></div><span class="badge">1–1,5 h</span></div><p class="place-body">Una pincelada de arquitectura y color que rompe la ruta imperial. Hazlo con el Prater o con un paseo por el Donaukanal.</p><a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Hundertwasserhaus%20Vienna" target="_blank" rel="noopener">📍 Hundertwasserhaus</a><a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Kunst%20Haus%20Wien" target="_blank" rel="noopener">📍 Kunst Haus Wien</a></div>
+
+    <div class="card"><div class="split"><div><span class="priority">Para un hueco musical</span><h2 class="place-title">🎶 Mozarthaus o House of Strauss</h2><p class="place-meta">Domgasse 5 / Donaustraße 99, 1010–1020 Wien</p></div><span class="badge">1–1,5 h</span></div><p class="place-body">El itinerario ya tiene música, pero no una casa de compositor visitable. Elige una, no las dos: Mozarthaus es más central y House of Strauss añade otro color a la ciudad musical.</p><a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Mozarthaus%20Vienna" target="_blank" rel="noopener">📍 Mozarthaus</a><a class="maplink" href="https://www.google.com/maps/search/?api=1&query=House%20of%20Strauss%20Vienna" target="_blank" rel="noopener">📍 House of Strauss</a></div>
+
+    <div class="card"><h2>🧩 Si solo puedes añadir una cosa</h2><p class="lead">Elige <b>Kunsthistorisches Museum</b> si buscas una visita completa de Viena; elige <b>Belvedere</b> si quieres una experiencia corta y un cuadro concreto; elige <b>Prater</b> si quieres cambiar de ritmo.</p></div>
+    <p class="source-note">La selección contrasta la agenda existente con el listado oficial de atracciones de Vienna Tourist Board. Los horarios y cierres deben comprobarse antes de reservar.</p>
+  </section>
+
+  <section id="pianos">
+    <div class="hero"><p class="eyebrow">Opción independiente</p><h2>🎹 Pianos públicos en Viena.</h2><p>He quitado la referencia que no encajaba y he separado esta búsqueda del itinerario. Lo importante: son oportunidades, no reservas garantizadas.</p></div>
+    <div class="notice danger"><strong>Durante tu viaje no hay un Open Piano oficial confirmado en Viena</strong>El calendario 2026 de Open Piano marca Mariahilferstraße del 1 al 6 de septiembre y Handelskai del 28 al 30; tu estancia es del 12 al 18. Aun así, puedes revisar sus ubicaciones por si anuncian una fecha nueva.</div>
+    <div class="card"><h2>📌 Cómo interpretar esta lista</h2><p>Las ubicaciones inferiores proceden de un mapa colaborativo y aparecen como “availability unknown” o “likely not available”. Incluyo coordenadas para abrirlas en Google Maps, pero verifica el piano físicamente o en el sitio oficial antes de desplazarte.</p><a class="btn primary" href="https://openpianomusic.com/standorte/" target="_blank" rel="noopener">Ver calendario Open Piano</a><a class="btn" href="https://pianos.pub/location/austria/vienna/vienna" target="_blank" rel="noopener">Ver mapa colaborativo</a></div>
+
+    <div class="card"><div class="split"><div><span class="priority">Disponibilidad no confirmada</span><h2 class="place-title">🎹 Wiener Konzerthaus</h2><p class="place-meta">Lothringerstraße 20, 1030 Wien · 48.20063, 16.37764</p></div><span class="badge warn">posible</span></div><p class="place-body">El mapa colaborativo registra un piano aquí, pero la última referencia es antigua. Es el candidato más interesante para ti por el contexto musical, no una garantía de que siga instalado.</p><a class="maplink coords" href="https://www.google.com/maps/search/?api=1&query=48.20063%2C16.37764" target="_blank" rel="noopener">📍 Abrir coordenadas</a><a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Wiener%20Konzerthaus" target="_blank" rel="noopener">🔎 Buscar recinto</a></div>
+
+    <div class="card"><div class="split"><div><span class="priority">Disponibilidad no confirmada</span><h2 class="place-title">🎹 Keplerplatz · Favoritenstraße 89</h2><p class="place-meta">1100 Wien · 48.17988, 16.37624</p></div><span class="badge warn">posible</span></div><p class="place-body">Registrado en el mapa público como piano de Keplerplatz. Está fuera de tus rutas principales y la última referencia también es antigua; solo iría si aparece confirmado al revisar el mapa.</p><a class="maplink coords" href="https://www.google.com/maps/search/?api=1&query=48.17988%2C16.37624" target="_blank" rel="noopener">📍 Abrir coordenadas</a></div>
+
+    <div class="card"><div class="split"><div><span class="priority">Disponibilidad no confirmada</span><h2 class="place-title">🎹 Alsergrund · Liechtensteinstraße 73</h2><p class="place-meta">1090 Wien · 48.22538, 16.35680</p></div><span class="badge warn">posible</span></div><p class="place-body">Candidato de barrio, relativamente cerca del Museo Viktor Frankl. Si quisieras probarlo el lunes, primero confirma que el instrumento sigue ahí.</p><a class="maplink coords" href="https://www.google.com/maps/search/?api=1&query=48.22538%2C16.35680" target="_blank" rel="noopener">📍 Abrir coordenadas</a></div>
+
+    <div class="card"><div class="split"><div><span class="priority">Disponibilidad no confirmada</span><h2 class="place-title">🎹 Wiener Staatsoper</h2><p class="place-meta">Opernring 2, 1010 Wien · 48.20327, 16.36921</p></div><span class="badge warn">posible</span></div><p class="place-body">El mapa colaborativo registra un piano en la zona de la Ópera, pero no confirma acceso público actual. No contaría con tocar sin preguntar allí.</p><a class="maplink coords" href="https://www.google.com/maps/search/?api=1&query=48.20327%2C16.36921" target="_blank" rel="noopener">📍 Abrir coordenadas</a><a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Wiener%20Staatsoper" target="_blank" rel="noopener">🔎 Buscar Ópera</a></div>
+
+    <div class="card"><div class="split"><div><span class="priority">Última referencia: no disponible</span><h2 class="place-title">🎹 Stephansplatz · Ginza Point</h2><p class="place-meta">Stock-im-Eisen-Platz · 48.20804, 16.37152</p></div><span class="badge warn">descartado</span></div><p class="place-body">El mapa lo marca como no disponible o visto por última vez hace poco, pero sin garantía de continuidad. Úsalo solo como comprobación mientras ya estés en Stephansdom.</p><a class="maplink coords" href="https://www.google.com/maps/search/?api=1&query=48.20804%2C16.37152" target="_blank" rel="noopener">📍 Abrir coordenadas</a></div>
+
+    <div class="notice ok"><strong>Mi recomendación realista</strong>Revisa Open Piano la semana anterior y el día 13. Si no aparece un evento nuevo, prueba únicamente el Konzerthaus o el piano que quede más cerca de tu ruta; no diseñes una tarde entera alrededor de un instrumento sin confirmar.</div>
+    <p class="source-note">Fuentes: <a href="https://openpianomusic.com/standorte/" target="_blank" rel="noopener">Open Piano · ubicaciones 2026</a> y <a href="https://pianos.pub/location/austria/vienna/vienna" target="_blank" rel="noopener">pianos.pub · mapa colaborativo</a>. Coordenadas de los puntos de mapa, no de una reserva.</p>
+  </section>
+
+  <section id="logistica">
+    <div class="hero"><p class="eyebrow">Todo lo práctico</p><h2>🧳 Logística sin esconderla.</h2><p>Vuelos, alojamiento, transporte, entradas y pequeños recordatorios para que los días rápidos no dependan de buscar entre mensajes.</p></div>
+    <div class="card"><h2>✈️ Vuelos</h2><div class="row"><span class="key">Ida · Iberia</span><span class="value">MAD 19:55 → VIE 22:55</span></div><div class="row"><span class="key">Sábado 12 sep</span><span class="value">Reserva 1138-420-800</span></div><div class="row"><span class="key">Vuelta · IB794</span><span class="value">VIE 15:40 → MAD 18:50</span></div><div class="row"><span class="key">Viernes 18 sep</span><span class="value">Trip.com</span></div><a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Madrid%20Barajas%20T4" target="_blank" rel="noopener">📍 MAD</a><a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Vienna%20International%20Airport%20Terminal%201" target="_blank" rel="noopener">📍 VIE T1</a></div>
+
+    <div class="card"><h2>🏠 Alojamiento</h2><p><b>Silver Homes 1050 Vie</b><br>Schönbrunner Straße 127 C0, 05. Margareten, 1050 Wien</p><div class="row"><span class="key">Entrada</span><span class="value">Sáb 12 · 15:00–00:00</span></div><div class="row"><span class="key">Salida</span><span class="value">Vie 18 · 09:00–11:00</span></div><p class="muted">Parada útil: Margaretenplatz/Schönbrunner Straße. U4 Pilgramgasse está a unos 10 min a pie. El tranvía 62 conecta tu base con Karlsplatz y Schönbrunn.</p><a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Sch%C3%B6nbrunner%20Stra%C3%9Fe%20127%2C%201050%20Wien" target="_blank" rel="noopener">📍 Alojamiento</a><a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Pilgramgasse%20Wien" target="_blank" rel="noopener">📍 U4 Pilgramgasse</a></div>
+
+    <div class="card"><h2>🚇 Transporte · la versión corregida</h2><div class="notice danger"><strong>Obras S-Bahn · 7 sep 2026 → fin de octubre 2027</strong>El tramo central Hauptbahnhof/St. Marx–Praterstern está cerrado. Para aeropuerto, mira el plan de Wiener Linien/ÖBB y la información de Flughafen Wien: el plan de obras contempla “CAT by bus” entre Wien Mitte y VIE.</div><p><b>Llegada y vuelta:</b> aeropuerto → Wien Mitte con el servicio vigente → U4 a Pilgramgasse. Como alternativa, Vienna Airport Bus o taxi/Bolt si el horario nocturno no te encaja.</p><p class="muted">El CAT habitual anuncia 16 min y último servicio 23:37, pero durante las obras el servicio puede operar como sustitución en autobús. No te fíes de una hora antigua: consulta el enlace oficial el 12 y el 18.</p><a class="maplink" href="https://tramwm.wienerlinien.at/web/guest/modernisierungen/sperre-s-bahn-stammstrecke" target="_blank" rel="noopener">🔎 Wiener Linien: obras</a><a class="maplink" href="https://viennaairport.com/en/passengers/arrival__parking/city_airport_train_cat" target="_blank" rel="noopener">🔎 Flughafen Wien: CAT</a><a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Wien%20Mitte%20Landstra%C3%9Fe" target="_blank" rel="noopener">📍 Wien Mitte</a></div>
+
+    <div class="card"><h2>🎫 Entradas y reservas</h2><div class="row"><span class="key">Musikverein</span><span class="value">Lun 14 · 20:15</span></div><p class="muted">Fila 18, asiento 11 · puertas previstas 19:15.</p><a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Musikverein%20Wien" target="_blank" rel="noopener">📍 Musikverein</a><div class="row"><span class="key">Schlosstheater</span><span class="value">Mar 15 · 19:00</span></div><p class="muted">“La bella Selvaggia” · pedido oeticket 1536452752.</p><a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Schlosstheater%20Sch%C3%B6nbrunn" target="_blank" rel="noopener">📍 Schlosstheater</a><div class="row"><span class="key">Schönbrunn</span><span class="value">reservar franja</span></div><a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Sch%C3%B6nbrunn%20Palace%20Vienna" target="_blank" rel="noopener">📍 Palacio</a></div>
+
+    <div class="card"><h2>💡 Recordatorios útiles</h2><ul class="checklist"><li>Compra el transporte en WienMobil o Wiener Linien y revisa incidencias el día del trayecto.</li><li>Si compras papel, valida el billete donde corresponda antes de iniciar el viaje.</li><li>Un bono de 7 días solo compensa si te mueves casi a diario; compara con billetes de 24 h.</li><li>Para museo y concierto, guarda entradas y direcciones offline.</li><li>En los pianos públicos, pregunta antes de tocar si el instrumento está en un recinto o evento.</li></ul></div>
+    <p class="footer">Hecho para mirar el móvil, tocar un mapa y seguir andando · 12–18 septiembre 2026</p>
+  </section>
+</main>
+
+<script>
+const tabs = [...document.querySelectorAll('.tabs button')];
+const sections = [...document.querySelectorAll('main > section')];
+const themeToggle = document.getElementById('themeToggle');
+
+function activate(id, updateHash = true){
+  const target = document.getElementById(id) || document.getElementById('inicio');
+  sections.forEach(section => section.classList.toggle('active', section === target));
+  tabs.forEach(tab => tab.classList.toggle('active', tab.dataset.tab === target.id));
+  const activeTab = tabs.find(tab => tab.dataset.tab === target.id);
+  activeTab?.scrollIntoView({behavior:'smooth',block:'nearest',inline:'center'});
+  window.scrollTo({top:0,behavior:'smooth'});
+  if(updateHash) history.replaceState(null,'','#'+target.id);
+}
+
+tabs.forEach(tab => tab.addEventListener('click', () => activate(tab.dataset.tab)));
+document.querySelectorAll('[data-go]').forEach(button => button.addEventListener('click', () => activate(button.dataset.go)));
+
+const savedTheme = localStorage.getItem('viena-theme');
+if(savedTheme === 'dark') document.documentElement.dataset.theme = 'dark';
+themeToggle.textContent = document.documentElement.dataset.theme === 'dark' ? '☀️' : '🌙';
+themeToggle.addEventListener('click', () => {
+  const dark = document.documentElement.dataset.theme === 'dark';
+  document.documentElement.dataset.theme = dark ? 'light' : 'dark';
+  localStorage.setItem('viena-theme', dark ? 'light' : 'dark');
+  themeToggle.textContent = dark ? '🌙' : '☀️';
+});
+
+const initial = location.hash.replace('#','');
+if(document.getElementById(initial)) activate(initial, false);
+</script>
+</body>
+</html>
